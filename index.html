@@ -1,0 +1,64 @@
+<html><head>
+    <base href="." />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="sounds/background-music.mp3" type="audio/mp3">
+    </audio>
+    <audio id="gui-sound">
+        <source src="sounds/gui-select.wav" type="audio/wav">
+    </audio>      
+
+    <div id="end-screen" class="end-screen" style="display: none;">
+        <h1 class="game-title">Game Over!</h1>
+        <div id="final-scores"></div>
+        <button class="menu-button" onclick="location.reload()">Play Again</button>
+    </div>
+
+    <div id="menu-screen" class="menu-screen">
+        <div class="menu-container">
+            <div class="menu-background"></div>
+            <h1 class="game-title">OBSTACLES</h1>
+            <p class="game-description">Race against a bot to dodge falling objects and survive till the end of time!</p>
+            <div class="menu-buttons">
+                <button class="menu-button rules" onclick="showInstructions()">RULES</button>
+                <button class="menu-button start" onclick="startGame()">START</button>
+            </div>
+        </div>
+        <div id="instructions" class="instructions">
+            <h2>How to Play</h2>
+            <p>Use <span class="rule-highlight">LEFT</span> and <span class="rule-highlight">RIGHT</span> arrow keys to move</p>
+            <p>Dodge the falling objects to survive!</p>
+            <p>Survive for <span class="rule-highlight">60 seconds</span> to win</p>
+            <p>Score <span class="rule-highlight">+1 point</span> every 2 seconds</p>
+            <p>Lose <span class="rule-highlight">-1 point</span> when hit by objects</p>
+            <button class="menu-button" onclick="hideInstructions()">BACK TO MENU</button>
+        </div>
+    </div>
+
+    <div id="player-side" class="game-container">
+        <div class="wall wall-left"></div>
+        <div class="wall wall-right"></div>
+        <div class="floor"></div>
+        <div class="player"></div>
+        <div class="timer" id="player-side-timer">Time: 60</div>
+        <div class="score">Score: <span id="player-side-score">0</span></div>
+    </div>
+    <div id="bot-side" class="game-container">
+        <div class="wall wall-left"></div>
+        <div class="wall wall-right"></div>
+        <div class="floor"></div>
+        <div class="bot"></div>
+        <div class="timer" id="bot-side-timer">Time: 60</div>
+        <div class="score">Score: <span id="bot-side-score">0</span></div>
+    </div>
+    <script>
+        window.onload = function() {
+            var backgroundMusic = document.getElementById('background-music');
+            backgroundMusic.play();
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
