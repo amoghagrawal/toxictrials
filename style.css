@@ -32,8 +32,8 @@ body {
 
 .menu-container {
     position: relative;
-    width: 600px;
-    height: 450px;
+    width: 500px;
+    height: 400px;
     background-image: url('assets/menu.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body {
 
 .game-title {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 56px;
+    font-size: 48px;
     color: #ff4444;
     text-shadow: 0 0 10px rgba(255, 68, 68, 0.7);
     margin-bottom: 20px;
@@ -56,11 +56,11 @@ body {
 
 .game-description {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     color: #ffffff;
     text-align: center;
     margin-bottom: 30px;
-    max-width: 450px;
+    max-width: 400px;
     line-height: 1.4;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -93,21 +93,13 @@ body {
     background: rgba(255, 68, 68, 0.8);
 }
 
-.menu-button.start {
+.menu-buttons .menu-button {
     background: rgba(68, 255, 68, 0.8);
 }
 
 .menu-button:hover {
     transform: scale(1.05);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.menu-button.rules:hover {
-    box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
-}
-
-.menu-button.start:hover {
-    box-shadow: 0 0 15px rgba(68, 255, 68, 0.3);
 }
 
 .instructions {
@@ -119,8 +111,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 600px;
-    height: 450px;
+    width: 500px;
+    height: 380px;
     padding: 40px;
     color: white;
     z-index: 1100;
@@ -133,7 +125,7 @@ body {
 
 .instructions h2 {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 36px;
+    font-size: 32px;
     color: #ff4444;
     text-shadow: 0 0 10px rgba(255, 68, 68, 0.7);
     margin-bottom: 20px;
@@ -141,7 +133,7 @@ body {
 
 .instructions p {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     color: #ffffff;
     margin: 8px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -168,21 +160,14 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.wall {
-    width: 30px;
+.survival-container {
+    width: 100% !important;
+    margin: 0 !important;
     height: 100vh;
-    position: absolute;
-    background-image: url('assets/IndustrialTile_13.png');
-    background-repeat: repeat;
-    image-rendering: pixelated;
-    will-change: transform;
+    position: relative;
+    display: none;
+    background: rgba(0, 0, 0, 0.3);
 }
-
-.wall-left { 
-    left: 0; 
-    transform: rotate(180deg);
-}
-.wall-right { right: 0; }
 
 .floor {
     position: absolute;
@@ -196,7 +181,42 @@ body {
     transform: rotate(180deg);
     image-rendering: pixelated;
     will-change: transform;
+    width: 100%;
 }
+
+.survival-container .floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-image: url('assets/IndustrialTile_23.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    transform: rotate(180deg);
+    image-rendering: pixelated;
+    will-change: transform;
+    width: 100%;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.wall {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    background-image: url('assets/IndustrialTile_13.png');
+    background-repeat: repeat;
+    background-size: auto;
+    image-rendering: pixelated;
+    will-change: transform;
+}
+
+.wall-left { 
+    left: 0; 
+    transform: rotate(180deg);
+}
+.wall-right { right: 0; }
 
 .player, .bot {
     width: 117px;  
@@ -253,26 +273,27 @@ body {
 
 #final-scores {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 1px;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #final-scores h2 {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 8px;
 }
 
 #final-scores h3 {
     font-family: 'CyberpunkCraftpix', 'Pixelify Sans', Arial, sans-serif;
-    font-size: 28px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin-top: 8px;
 }
 
 #final-scores p {
-    margin: 5px 0;
+    margin: 4px 0;
+    font-size: 18px;
 }
 
 .end-screen {
@@ -280,13 +301,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 450px;
+    width: 400px;
+    height: 300px;
     background-image: url('assets/menu.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 40px;
+    padding: 30px;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -297,17 +318,44 @@ body {
 }
 
 .end-screen .menu-button {
-    margin-top: 5px;
-    background: rgba(68, 255, 68, 0.8);
-    padding: 12px 25px;
-    font-size: 22px;
+    margin-top: 4px;
+    padding: 8px 20px;
+    font-size: 18px;
 }
 
-.end-screen .menu-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(68, 255, 68, 0.3);
+.end-screen .game-title {
+    font-size: 36px;
+    margin-bottom: 15px;
 }
 
 #background-music {
     display: none;
+}
+
+.gamemode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.gamemode-buttons .menu-button {
+    width: 160px;
+    height: 40px;
+    background: rgba(68, 68, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 8px 20px;
+}
+
+.back-button {
+    margin-top: 12px !important;
+    background: rgba(255, 68, 68, 0.8) !important;
+    width: 200px !important;
+}
+
+.back-button:hover {
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.3) !important;
 }
